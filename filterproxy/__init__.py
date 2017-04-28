@@ -55,6 +55,11 @@ def dumb_sql_filter(view):
     """
     @wraps(view)
     def decorated(*args, **kwargs):
+        # I'm using just a machine learning classifier to do my filtering, but that could
+        # be made more efficient, by adding a few simple manual filters here, that weed out
+        # the most obvious sql injection attempts. If the query passes those, then we can
+        # use more expensive filtering.
+        
         if len(request.args.values()) > 0:
             # vectorize the request arguments values
             # If this was ment to run in the real world, I'd do some sort of de-obfuscation here.
