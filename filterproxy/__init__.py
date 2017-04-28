@@ -77,7 +77,7 @@ def dumb_sql_filter(view):
                 status = app.config['CLASSES'][prediction]['status']
                 message = app.config['CLASSES'][prediction]['message']
 
-                # So, here if I really wanted to this well, classification would not be
+                # So, here if I really wanted to do this well, classification would not be
                 # a boolean category. I'd get the probability from the classifier, and then
                 # add that to a total score for all query parameters. You could then choose
                 # how strict you want your filter to be, by setting a threshold on the score.
