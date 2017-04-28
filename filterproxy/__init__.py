@@ -57,6 +57,11 @@ def dumb_sql_filter(view):
     def decorated(*args, **kwargs):
         if len(request.args.values()) > 0:
             # vectorize the request arguments values
+            # If this was ment to run in the real world, I'd do some sort of deobfuscation here.
+            # Base64 decode, un-url encode any remaining url encoded values, etc. If this was written
+            # for a specific application, I could also maybe sanitize these, and strip out 
+            # anything that would not be valid input for the uptream app. We could also vary the filtering
+            # for specific paths, being more strict on some.
             vectors = vectorizer.transform(request.args.values())
 
             # Here, I'm using an svm classifier, but that is not likely to be the ideal choice
