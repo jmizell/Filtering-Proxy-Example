@@ -31,7 +31,7 @@ docker run -it \
   --rm \
   -p 127.0.0.1:8080:8080 \
   --link filterproxy_wordpress:upstream \
-  filterproxy
+  jmizell/filtering-proxy-example
 ```
 
 # Building this example
