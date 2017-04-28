@@ -88,6 +88,9 @@ def dumb_sql_filter(view):
                 # don't do anything with negatives
                 if status == 200:
                     continue
+                    
+                # I just return a simple message, and satus, but in the real world, maybe we
+                # would just redirect to a captcha, or redirect the user to a re-authentication page.
                 return message, status
         return view(*args, **kwargs)
     return decorated
