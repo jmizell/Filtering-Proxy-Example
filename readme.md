@@ -3,7 +3,7 @@ This proxy example uses a svm linear classifier to reject possible sql strings f
 
 # Running this example
 
-## Run a wordpress container
+### Run a wordpress container
 In this example where using wordpress, but it can be any container really
 ```
 docker run -d \
@@ -22,7 +22,7 @@ docker run -d \
   --link filterproxy_mysql:db \
   wordpress:latest
 ```
-
+### Run the filtering proxy container
 Now we run the proxy app. You don't have to, but I perfer to run containers I'm debugging in an interactive session.
 
 ```
@@ -45,3 +45,7 @@ docker build -t filter-proxy-example .
 A script is provided under data to easily train a new model. Just cd to data, and run python train.py. A new classifier, and vectorizor will be trained, and written to disk.
 
 The model's data can be updated by adding new samples in the positive, or negative folders. Entries should be one line in a text file, with the extension, txt.
+
+# Unit Test
+Unit tests are ran during the container build, if they fail, the build will fail.
+
