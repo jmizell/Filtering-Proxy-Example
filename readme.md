@@ -16,7 +16,7 @@ Since this is just a sample project, the following things where assumed
 # Running this example
 
 ### Run Wordpress
-This cointainer will be our upstream server, we are attempting to protect. In this example where using wordpress, but it can be any container.
+This cointainer will be our upstream server, that we are attempting to protect. In this example where using wordpress, but it can be any container.
 
 ```
 docker run -d \
@@ -49,9 +49,9 @@ docker run -it \
 ```
 
 ### Using the example
-You won't be able to do much with the proxy, and wordpress, as only get is allowed, and posts are filtered, you cannot get past the configuration screen. 
+You won't be able to do much with the proxy, and wordpress. Since the http get method is the only one allowed, you cannot get past the configuration screen. 
 
-To trigger an alert, pass any parameters in the browser query string. The following examples should have the following result.
+To trigger a rejection, pass any parameters in the browser. The following examples should have the following result.
 
 * 403 Forbidden, http://127.0.0.1:8080/?test=105%20OR%201=1
 * 403 Forbidden, http://127.0.0.1:8080/?test=105;%20DROP%20TABLE%20Suppliers
