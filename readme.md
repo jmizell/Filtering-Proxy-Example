@@ -15,8 +15,8 @@ Since this is just a sample project, the following things where assumed
 
 # Running this example
 
-### Run a wordpress container
-In this example where using wordpress, but it can be any container really
+### Run Wordpress
+This cointainer will be our upstream server, we are attempting to protect. In this example where using wordpress, but it can be any container.
 
 ```
 docker run -d \
@@ -26,6 +26,7 @@ docker run -d \
   -e MYSQL_USER=wordpress \
   -e MYSQL_PASSWORD=wordpress \
   mysql:5.7
+  
 docker run -d \
   --name filterproxy_wordpress \
   -e WORDPRESS_DB_HOST=db:3306 \
