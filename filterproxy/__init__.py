@@ -57,10 +57,10 @@ def dumb_sql_filter(view):
     def decorated(*args, **kwargs):
         if len(request.args.values()) > 0:
             # vectorize the request arguments values
-            # If this was ment to run in the real world, I'd do some sort of deobfuscation here.
+            # If this was ment to run in the real world, I'd do some sort of de-obfuscation here.
             # Base64 decode, un-url encode any remaining url encoded values, etc. If this was written
             # for a specific application, I could also maybe sanitize these, and strip out 
-            # anything that would not be valid input for the uptream app. We could also vary the filtering
+            # anything that would not be valid input for the upstream app. We could also vary the filtering
             # for specific paths, being more strict on some.
             vectors = vectorizer.transform(request.args.values())
 
@@ -73,7 +73,7 @@ def dumb_sql_filter(view):
                 message = app.config['CLASSES'][prediction]['message']
 
                 # So, here if I really wanted to this well, classification would not be
-                # a boolean catagory. I'd get the probability from the classifiery, and then
+                # a boolean category. I'd get the probability from the classifier, and then
                 # add that to a total score for all query parameters. You could then choose
                 # how strict you want your filter to be, by setting a threshold on the score.
                 
@@ -101,7 +101,7 @@ def root(path="/"):
     :return: Response object containing the response from the upstream server
     """
     
-    # This here, is probably the most inefficent way to handle this task. I'm storing everything
+    # This here, is probably the most inefficient way to handle this task. I'm storing everything
     # in memory, then passing it on to the client. Ideally I'd stream the response to the client
     # as it arrived from the upstream server. However, all attempts I've made to do that in 
     # Flask in the past have had issues. Flask is just not suited for that task with out jumping
