@@ -1,0 +1,1 @@
+from filterproxy import app
