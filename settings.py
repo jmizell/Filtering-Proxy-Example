@@ -1,4 +1,4 @@
-PROXY_TARGET = "http://wordpress"
+PROXY_TARGET = "http://upstream"
 PREDICTOR_MODEL = "/app/svm_linear_classifier.pkl"
 VECTORIZOR = "/app/vectorizer.pkl"
 CLASSES = {
