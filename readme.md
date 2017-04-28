@@ -10,13 +10,13 @@ Since this is just a sample project, the following things where assumed
 
 * It didn't need to be highly performant. It is neither memory efficient, nor as fast as possible.
 * No other http methods other than get was configured.
-* I do not check for obfuscion of any kind in the query parameters.
-* I did not tune the model to prevent overfitting, which it almost certainly is.
+* I do not check for obfuscation of any kind in the query parameters.
+* I did not tune the model to prevent over-fitting, which it almost certainly is.
 
 # Running this example
 
 ### Run Wordpress
-This cointainer will be our upstream server, that we are attempting to protect. In this example where using wordpress, but it can be any container.
+This container will be our upstream server, that we are attempting to protect. In this example we're using wordpress, but it can be any container.
 
 ```
 docker run -d \
@@ -37,7 +37,7 @@ docker run -d \
 ```
 
 ### Run the filtering proxy container
-Now we run the proxy app. You don't have to, but I perfer to run containers I'm debugging in an interactive session. Port 8080 is bound to localhost obviously, if you need to access this from a remote machine, be aware.
+Now we run the proxy app. You don't have to, but I prefer to run containers I'm debugging in an interactive session. Port 8080 is bound to localhost obviously, if you need to access this from a remote machine, be aware.
 
 ```
 docker run -it \
