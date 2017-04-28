@@ -6,6 +6,8 @@ This app was built in python, as it's the language I could complete the project 
 
 Originally I was going to write a series of regex patterns, but as I looked more at the problem, it didn't seem like an affective solution. I opted instead to train a machine learning classifier on samples of sql injection. I choose svm as it's effective with a small set of data, and if the problem turned out to be non-linear, I can make use of a polynomial kernel. 
 
+Everything is run in docker, because my dev environment is not your dev environment. With docker I can be certain that you are running everything exactly as I built it.
+
 Since this is just a sample project, the following things where assumed
 
 * It didn't need to be highly performant. It is neither memory efficient, nor as fast as possible.
